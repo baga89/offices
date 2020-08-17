@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="app.css">
+</head>
+
+<body>
+  <!-- Header -->
+  <header>
+    <!-- Logo -->
+    <div class="logo-wrapper">
+      <a href="/"><img src="images/logo.png" alt="FavBet logo" class="logo"></a>
+    </div>
+    <!-- Navigation -->
+    <nav class="d-none-xs d-block-md">
+      <ul>
+        <li><a href="#">Sport <span class="caret-down">&#9660;</span></a></li>
+        <li><a href="#">Uživo <span class="caret-down">&#9660;</span< /a>
+        </li>
+        <li><a href="#">Casino</a></li>
+        <li><a href="#">Virtuali</a></li>
+        <li><a href="#">Promocije</a></li>
+      </ul>
+    </nav>
+    <!-- Authentication -->
+    <div class="authentication d-none-xs d-block-md">
+      <button class="btn btn-login">Ulogiraj se</button>
+      <button class="btn btn-register">Registriraj se</button>
+    </div>
+  </header>
+
+  <!-- Promo page -->
+  <section class="promo-page">
+    <div class="promo-page-container">
+      <!-- Back button -->
+      <div class="back-button-wrapper">
+        <a href="#" class="back-button">&larr; Nazad</a>
+      </div>
+      <!-- Promo Card Content -->
+      <div class="promo-content promo-card">
+        <!-- Promo Card Header -->
+        <div class="promo-card-header">
+          <h1>Popis poslovnica i radno vrijeme</h1>
+        </div>
+        <!-- Promo Card Body -->
+        <div class="promo-card-body">
+          <div id="map"></div>
+            <table>
+              <thead>
+                <tr>
+                  <th>Mjesto</th>
+                  <th>Adresa</th>
+                  <th>Period</th>
+                  <th>Radno vrijeme</th>
+                </tr>
+              </thead>
+            </table>
+        </div>
+        <!-- Promo Card Footer -->
+        <!-- <div class="promo-card-footer">
+          <p class="text-small">Footer</p>
+        </div>
+      </div> -->
+
+  </section>
+
+  <script src="offices.js"></script>
+  <!-- <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script> -->
+  <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAlhO9RXtLxU-csA-gqWtAFaG2QBu2xacg&callback=initMap&libraries=&v=weekly"
+      defer
+    ></script>
+</body>
+
+</html>
