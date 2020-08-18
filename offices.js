@@ -864,7 +864,7 @@ function initMap() {
       (function (marker, i) {
         return function () {
           infowindow.setContent(`
-          <h3>${offices[i].mjesto}</h3>
+          <h3>${offices[i].tip} ${offices[i].mjesto}</h3>
           <p>${offices[i].adresa}</p>
           <ul>
             ${offices[i].radnoVrijeme.map(dan => `<li>${dan}</li>`).join("")}
@@ -874,4 +874,14 @@ function initMap() {
       })(marker, i)
     );
   }
+
+  const legend = document.getElementById('legend');
+  legend.innerHTML = `
+    <h3>Legenda</h3>
+    <p><img src="images/map-marker-red.svg" alt="Automat klub ikona"> - Automat Klub</p>
+    <p><img src="images/map-marker-blue.svg" alt="Poslovnica ikona"> - Poslovnica</p>
+    <span class="close-legend">&#10006;</span>`
+  const closeLegend = document.querySelector(".close-legend");
+  closeLegend.addEventListener("click", () => legend.style = "display: none");
+  map.controls[google.maps.ControlPosition.LEFT_CENTER].push(legend);
 }
