@@ -99,26 +99,26 @@ const automatClubs = [
     radnoVrijeme: ["PON - NED: 00:00 - 24:00"],
     latlong: { latitude: 46.376176, longitude: 16.378653 }
   },
-  {
-    // naziv: "AK BENKOVAC",
-    mjesto: "BENKOVAC",
-    adresa: "KRALJA DMITRA ZVONIMIRA 4",
-    tip: "AUTOMAT KLUB",
-    ikona: "images/map-marker-red.svg",
-    period: ["-"],
-    radnoVrijeme: ["PON - NED: 00:00 - 24:00"],
-    latlong: { latitude: 44.033129, longitude: 15.617172 }
-  },
-  {
-    // naziv: "AK MAKARSKA",
-    mjesto: "MAKARSKA",
-    adresa: "SHOPING MALL \"OSEJAVE\"",
-    tip: "AUTOMAT KLUB",
-    ikona: "images/map-marker-red.svg",
-    period: ["-"],
-    radnoVrijeme: ["PON - NED: 00:00 - 24:00"],
-    latlong: { latitude: 43.291251, longitude: 17.025033 }
-  },
+  // {
+  //   naziv: "AK BENKOVAC",
+  //   mjesto: "BENKOVAC",
+  //   adresa: "KRALJA DMITRA ZVONIMIRA 4",
+  //   tip: "AUTOMAT KLUB",
+  //   ikona: "images/map-marker-red.svg",
+  //   period: ["-"],
+  //   radnoVrijeme: ["PON - NED: 00:00 - 24:00"],
+  //   latlong: { latitude: 44.033129, longitude: 15.617172 }
+  // },
+  // {
+  //   naziv: "AK MAKARSKA",
+  //   mjesto: "MAKARSKA",
+  //   adresa: "SHOPING MALL \"OSEJAVE\"",
+  //   tip: "AUTOMAT KLUB",
+  //   ikona: "images/map-marker-red.svg",
+  //   period: ["-"],
+  //   radnoVrijeme: ["PON - NED: 00:00 - 24:00"],
+  //   latlong: { latitude: 43.291251, longitude: 17.025033 }
+  // },
   {
     // naziv: "AK PULA",
     mjesto: "PULA",
@@ -814,6 +814,15 @@ const offices = [
 ];
 
 // let test1 = offices.filter(office => office.mjesto == "ZAGREB");
+
+const filterInput = document.getElementById("filterInput");
+
+filterInput.addEventListener("keyup", function () {
+  const filterInputValue = filterInput.value.toUpperCase();
+  const tr = document.querySelectorAll('tbody tr');
+  tr.forEach(tr => tr.style.display = [...tr.children].find(td => td.innerHTML.toUpperCase().includes(filterInputValue)) ? '' : 'none');
+});
+
 
 
 const displayOffices = (offices) => {

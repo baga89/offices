@@ -346,23 +346,41 @@ header {
   padding-bottom: 48px;
 }
 
+input#filterInput {
+  width: 100%;
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  border: none;
+  border: 1px solid rgba(0,0,0,0.1);
+  border-radius: 0;
+  outline: none;
+  background-color: transparent;
+  font-size: 1rem;
+  box-shadow: 0 .5rem 1rem rgba(0,0,0,.15);
+  transition: border .4s;
+}
+
+input#filterInput:focus {
+  border-bottom: 2px solid var(--secondary);
+}
+
 .table-responsive {
   overflow-x: auto;
+  margin-bottom: 1.5rem;
+  border: 1px solid rgba(0,0,0,0.1);
   box-shadow: 0 .5rem 1rem rgba(0,0,0,.15);
 }
 
 table {
   width: 100%;
-  margin-bottom: 1.5rem;
   border: 0;
   border-collapse: collapse;
 }
 
 table th {
+  padding: .75rem;
   color: #fff;
   background-color: var(--secondary);
-  border-color: #15324c;
-  vertical-align: bottom;
 }
 
 table td {
@@ -488,6 +506,10 @@ table tr:nth-child(even) {
 
   .promo-page {
     padding: 48px;
+  }
+
+  .table-responsive {
+    overflow-x: hidden;
   }
 }
 
